@@ -19,7 +19,14 @@
 		1EDB17291764976A00A5B08D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDB17271764976A00A5B08D /* MainStoryboard.storyboard */; };
 		1EDB172C1764976A00A5B08D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB172B1764976A00A5B08D /* ViewController.m */; };
 		1EDB1740176498BE00A5B08D /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EDB173F176498BE00A5B08D /* EventKit.framework */; };
-		1EDB1742176498F400A5B08D /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EDB1741176498F400A5B08D /* EventKit.framework */; };
+		1EF2DC601764AD63001AEDCD /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC571764AD63001AEDCD /* DataStore.m */; };
+		1EF2DC611764AD63001AEDCD /* DownloadURLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC591764AD63001AEDCD /* DownloadURLOperation.m */; };
+		1EF2DC621764AD63001AEDCD /* GoogleAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC5B1764AD63001AEDCD /* GoogleAPI.m */; };
+		1EF2DC631764AD63001AEDCD /* GoogleApiWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC5D1764AD63001AEDCD /* GoogleApiWrapper.m */; };
+		1EF2DC641764AD63001AEDCD /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC5F1764AD63001AEDCD /* Utils.m */; };
+		1EF2DC671764AD83001AEDCD /* ModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC661764AD83001AEDCD /* ModelObject.m */; };
+		1EF2DC6A1764AD95001AEDCD /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC681764AD95001AEDCD /* Event.m */; };
+		1EF2DC6F1764ADBC001AEDCD /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC6D1764ADBC001AEDCD /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,19 +46,24 @@
 		1EDB17281764976A00A5B08D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		1EDB172A1764976A00A5B08D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1EDB172B1764976A00A5B08D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1EDB17321764978F00A5B08D /* GoogleAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleAPI.h; sourceTree = "<group>"; };
-		1EDB17331764978F00A5B08D /* GoogleAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoogleAPI.m; sourceTree = "<group>"; };
-		1EDB17341764978F00A5B08D /* GoogleApiWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleApiWrapper.h; sourceTree = "<group>"; };
-		1EDB17351764978F00A5B08D /* GoogleApiWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoogleApiWrapper.m; sourceTree = "<group>"; };
-		1EDB17361764978F00A5B08D /* DownloadURLOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadURLOperation.h; sourceTree = "<group>"; };
-		1EDB17371764978F00A5B08D /* DownloadURLOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadURLOperation.m; sourceTree = "<group>"; };
-		1EDB17381764978F00A5B08D /* DataStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
-		1EDB17391764978F00A5B08D /* DataStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
-		1EDB173A1764978F00A5B08D /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
-		1EDB173B1764978F00A5B08D /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		1EDB173C1764978F00A5B08D /* CallType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CallType.h; sourceTree = "<group>"; };
 		1EDB173F176498BE00A5B08D /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
-		1EDB1741176498F400A5B08D /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		1EF2DC551764AD63001AEDCD /* CallType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallType.h; sourceTree = "<group>"; };
+		1EF2DC561764AD63001AEDCD /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
+		1EF2DC571764AD63001AEDCD /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
+		1EF2DC581764AD63001AEDCD /* DownloadURLOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadURLOperation.h; sourceTree = "<group>"; };
+		1EF2DC591764AD63001AEDCD /* DownloadURLOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadURLOperation.m; sourceTree = "<group>"; };
+		1EF2DC5A1764AD63001AEDCD /* GoogleAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleAPI.h; sourceTree = "<group>"; };
+		1EF2DC5B1764AD63001AEDCD /* GoogleAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleAPI.m; sourceTree = "<group>"; };
+		1EF2DC5C1764AD63001AEDCD /* GoogleApiWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleApiWrapper.h; sourceTree = "<group>"; };
+		1EF2DC5D1764AD63001AEDCD /* GoogleApiWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleApiWrapper.m; sourceTree = "<group>"; };
+		1EF2DC5E1764AD63001AEDCD /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		1EF2DC5F1764AD63001AEDCD /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		1EF2DC651764AD83001AEDCD /* ModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelObject.h; sourceTree = "<group>"; };
+		1EF2DC661764AD83001AEDCD /* ModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelObject.m; sourceTree = "<group>"; };
+		1EF2DC681764AD95001AEDCD /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		1EF2DC691764AD95001AEDCD /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		1EF2DC6D1764ADBC001AEDCD /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = ../User.m; sourceTree = "<group>"; };
+		1EF2DC6E1764ADBC001AEDCD /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../User.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +75,6 @@
 				1EDB17101764976A00A5B08D /* UIKit.framework in Frameworks */,
 				1EDB17121764976A00A5B08D /* Foundation.framework in Frameworks */,
 				1EDB17141764976A00A5B08D /* CoreGraphics.framework in Frameworks */,
-				1EDB1742176498F400A5B08D /* EventKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,9 +84,6 @@
 		1EDB17031764976A00A5B08D = {
 			isa = PBXGroup;
 			children = (
-				1EDB173F176498BE00A5B08D /* EventKit.framework */,
-				1EDB173D176497AD00A5B08D /* GoogleAPI */,
-				1EDB173E176497BD00A5B08D /* Helpers */,
 				1EDB17151764976A00A5B08D /* BuzzLight */,
 				1EDB170E1764976A00A5B08D /* Frameworks */,
 				1EDB170D1764976A00A5B08D /* Products */,
@@ -93,7 +101,7 @@
 		1EDB170E1764976A00A5B08D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1EDB1741176498F400A5B08D /* EventKit.framework */,
+				1EDB173F176498BE00A5B08D /* EventKit.framework */,
 				1EDB170F1764976A00A5B08D /* UIKit.framework */,
 				1EDB17111764976A00A5B08D /* Foundation.framework */,
 				1EDB17131764976A00A5B08D /* CoreGraphics.framework */,
@@ -104,6 +112,9 @@
 		1EDB17151764976A00A5B08D /* BuzzLight */ = {
 			isa = PBXGroup;
 			children = (
+				1EF2DC701764ADDE001AEDCD /* Model */,
+				1EF2DC711764ADEC001AEDCD /* GoogleAPI */,
+				1EF2DC721764ADF7001AEDCD /* Helpers */,
 				1EDB171E1764976A00A5B08D /* AppDelegate.h */,
 				1EDB171F1764976A00A5B08D /* AppDelegate.m */,
 				1EDB17271764976A00A5B08D /* MainStoryboard.storyboard */,
@@ -128,27 +139,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1EDB173D176497AD00A5B08D /* GoogleAPI */ = {
+		1EF2DC701764ADDE001AEDCD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1EDB17321764978F00A5B08D /* GoogleAPI.h */,
-				1EDB17331764978F00A5B08D /* GoogleAPI.m */,
-				1EDB17341764978F00A5B08D /* GoogleApiWrapper.h */,
-				1EDB17351764978F00A5B08D /* GoogleApiWrapper.m */,
-				1EDB173C1764978F00A5B08D /* CallType.h */,
+				1EF2DC6D1764ADBC001AEDCD /* User.m */,
+				1EF2DC6E1764ADBC001AEDCD /* User.h */,
+				1EF2DC681764AD95001AEDCD /* Event.m */,
+				1EF2DC691764AD95001AEDCD /* Event.h */,
+				1EF2DC651764AD83001AEDCD /* ModelObject.h */,
+				1EF2DC661764AD83001AEDCD /* ModelObject.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1EF2DC711764ADEC001AEDCD /* GoogleAPI */ = {
+			isa = PBXGroup;
+			children = (
+				1EF2DC551764AD63001AEDCD /* CallType.h */,
+				1EF2DC5A1764AD63001AEDCD /* GoogleAPI.h */,
+				1EF2DC5B1764AD63001AEDCD /* GoogleAPI.m */,
+				1EF2DC5C1764AD63001AEDCD /* GoogleApiWrapper.h */,
+				1EF2DC5D1764AD63001AEDCD /* GoogleApiWrapper.m */,
 			);
 			name = GoogleAPI;
 			sourceTree = "<group>";
 		};
-		1EDB173E176497BD00A5B08D /* Helpers */ = {
+		1EF2DC721764ADF7001AEDCD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				1EDB17361764978F00A5B08D /* DownloadURLOperation.h */,
-				1EDB17371764978F00A5B08D /* DownloadURLOperation.m */,
-				1EDB17381764978F00A5B08D /* DataStore.h */,
-				1EDB17391764978F00A5B08D /* DataStore.m */,
-				1EDB173A1764978F00A5B08D /* Utils.h */,
-				1EDB173B1764978F00A5B08D /* Utils.m */,
+				1EF2DC561764AD63001AEDCD /* DataStore.h */,
+				1EF2DC571764AD63001AEDCD /* DataStore.m */,
+				1EF2DC581764AD63001AEDCD /* DownloadURLOperation.h */,
+				1EF2DC591764AD63001AEDCD /* DownloadURLOperation.m */,
+				1EF2DC5E1764AD63001AEDCD /* Utils.h */,
+				1EF2DC5F1764AD63001AEDCD /* Utils.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -222,6 +246,14 @@
 				1EDB171C1764976A00A5B08D /* main.m in Sources */,
 				1EDB17201764976A00A5B08D /* AppDelegate.m in Sources */,
 				1EDB172C1764976A00A5B08D /* ViewController.m in Sources */,
+				1EF2DC601764AD63001AEDCD /* DataStore.m in Sources */,
+				1EF2DC611764AD63001AEDCD /* DownloadURLOperation.m in Sources */,
+				1EF2DC621764AD63001AEDCD /* GoogleAPI.m in Sources */,
+				1EF2DC631764AD63001AEDCD /* GoogleApiWrapper.m in Sources */,
+				1EF2DC641764AD63001AEDCD /* Utils.m in Sources */,
+				1EF2DC671764AD83001AEDCD /* ModelObject.m in Sources */,
+				1EF2DC6A1764AD95001AEDCD /* Event.m in Sources */,
+				1EF2DC6F1764ADBC001AEDCD /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +374,7 @@
 				1EDB17311764976A00A5B08D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

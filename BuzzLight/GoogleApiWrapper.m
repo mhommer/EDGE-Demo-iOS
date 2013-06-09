@@ -58,17 +58,6 @@
         NSArray *dictArray = [[self convertData:data] retain];
         [delegate apiWrapperLoadedModelObjects:[self eventArrayFromDictionaryArray:dictArray]];
         [dictArray release];
-    }else if (operation.callType == CallTypeTokenRetrieval || operation.callType == CallTypeTokenRefresh) {
-        
-        NSError *error = nil;
-        //NSString *dataStr2 = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        //NSLog(@"%@",dataStr2);
-        NSDictionary *token = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        
-        // Storing the token in the user defaults is not safe, we should use a keychain wrapper instead
-        // but for the prototype it'll do!
-        [DataStore storeToken:token];
-
     } else {
         NSString *dataStr2 = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"***** %@",dataStr2);

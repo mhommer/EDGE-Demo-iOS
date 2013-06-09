@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GoogleAPI.h"
+#import "GoogleApiWrapper.h"
 
-@interface ViewController : UIViewController {
+@interface ViewController : UIViewController <UIWebViewDelegate, GoogleAPIDelegate, GoogleApiWrapperDelegate> {
     
     IBOutlet UIWebView *webView;
+    GoogleApiWrapper *apiWrapper;
+    GoogleAPI *api;
 }
 
 @end
