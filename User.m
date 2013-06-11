@@ -11,4 +11,16 @@
 @implementation User
 
 @synthesize netlightId, first, last, email, phone;
+
+
+
+-(void)dealloc {
+    [super dealloc];
+    [netlightId release];
+    [first release];
+    [last release];
+    [email release];
+    [phone release];
+}
+
 @end

@@ -49,4 +49,8 @@
     
 }
 
+-(NSString*)stringWithSingleQuotes:(NSString*)str {
+    return [NSString stringWithFormat:@"'%@'", str];
+}
+
 @end

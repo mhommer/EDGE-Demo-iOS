@@ -35,6 +35,14 @@
             [apiWrapper getAllEvents];
             [apiWrapper getAllUsers];
             
+            [api selectRowInTable:TableUsers withDictionary:[[NSDictionary alloc] initWithObjectsAndKeys:@"id='iran'", @"ROWID", nil]];
+            NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                  @"first='Irina'",@"first='iRINA'",
+                                  @"last='Anastasiu'",@"last='aNASTASIU'",
+                                  nil];
+            [api updateRowInTable:TableUsers fromDictionary:dict];
+            
+            
         }
     }else {
         [api authorizeClient];

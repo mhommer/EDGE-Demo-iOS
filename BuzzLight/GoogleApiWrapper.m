@@ -7,9 +7,8 @@
 //
 
 #import "GoogleApiWrapper.h"
-#import "Event.h"
-#import "User.h"
 #import "DataStore.h"
+#import "Utils.h"
 
 
 @implementation GoogleApiWrapper
@@ -43,6 +42,19 @@
 -(void)getAllEvents {
     api.currentCallType = CallTypeListTableEvents;
     [api listAllInTable:TableEvents];
+}
+
+-(void)addUser:(User*)user {
+    NSDictionary *userDict = [self dictFromUser:user];
+    [api insertRowInTable:TableUsers fromDictionary:userDict];
+    [userDict release];
+}
+
+
+-(void)addEvent:(Event*)event {
+    NSDictionary *eventDict = [self dictFromEvent:event];
+    [api insertRowInTable:TableEvents fromDictionary:eventDict];
+    [eventDict release];
 }
 
 
@@ -84,6 +96,31 @@
     }
     return dictArray;
 }
+
+
+-(NSDictionary*)dictFromEvent:(Event*)event {
+    NSDictionary *eventDict = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                [Utils stringWithSingleQuotes:event.what], @"what",
+                                [Utils stringWithSingleQuotes:event.where], @"where",
+                                [NSNumber numberWithDouble:event.timestamp], @"when",
+                                [Utils stringWithSingleQuotes:[event.attendees componentsJoinedByString:@"|"]], @"attendees",
+                                nil];
+    
+    return eventDict;
+}
+
+-(NSDictionary*)dictFromUser:(User*)user {
+    NSDictionary *userDict = [[NSDictionary alloc] initWithObjectsAndKeys:
+                               [Utils stringWithSingleQuotes:user.netlightId], @"id",
+                               [Utils stringWithSingleQuotes:user.first], @"first",
+                               [Utils stringWithSingleQuotes:user.last], @"last",
+                               [Utils stringWithSingleQuotes:user.email], @"email",
+                               [Utils stringWithSingleQuotes:user.phone], @"phone",
+                               nil];
+    
+    return userDict;
+}
+
 
 -(Event*)eventFromDictionary:(NSDictionary*)dict {
     
@@ -136,6 +173,10 @@
     [events release];
     return theEvents;
 }
+
+
+
+
 
 
 -(void)dealloc {

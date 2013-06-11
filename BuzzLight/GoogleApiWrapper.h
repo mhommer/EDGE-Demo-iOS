@@ -10,6 +10,8 @@
 #import "ModelObject.h"
 #import "DownloadURLOperation.h"
 #import "GoogleAPI.h"
+#import "Event.h"
+#import "User.h"
 
 @protocol GoogleApiWrapperDelegate <NSObject>
 
@@ -30,6 +32,6 @@
 -(void)getAllEvents;
 -(void)listAllInTable:(TableType)table;
 -(void)selectRowInTable:(TableType)table withDictionary:(NSDictionary*)dict;
--(void)insertRowInTable:(TableType)table fromDictionary:(NSDictionary*)dict;
--(void)updateRowInTable:(TableType)table fromDictionary:(NSDictionary*)dict;
+-(void)addUser:(User*)user;
+-(void)addEvent:(Event*)event;
 @end

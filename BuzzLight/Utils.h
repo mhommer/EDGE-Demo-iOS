@@ -18,5 +18,6 @@
 +(BOOL)hasTokenExpired:(NSDictionary*)token;
 +(void)addToCalendarWithEvent:(Event*)e;
 +(void)removeFromCalendarWithEvent:(Event*)e;
++(NSString*)stringWithSingleQuotes:(NSString*)str;
 
 @end

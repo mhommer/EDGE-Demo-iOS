@@ -13,7 +13,6 @@
 @synthesize what, where, timestamp, attendees;
 
 
-
 -(void)dealloc {
     [super dealloc];
     [what release];
