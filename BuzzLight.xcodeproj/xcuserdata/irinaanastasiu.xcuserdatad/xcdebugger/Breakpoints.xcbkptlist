@@ -7,13 +7,26 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "BuzzLight/GoogleAPI.m"
-         timestampString = "392485618.749153"
+         filePath = "BuzzLight/LoginViewController.m"
+         timestampString = "392710897.853102"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "241"
-         endingLineNumber = "241"
-         landmarkName = "-loadDataFromUrl:withMethod:andBody:"
+         startingLineNumber = "35"
+         endingLineNumber = "35"
+         landmarkName = "-apiWrapperLoadedModelObjects:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "BuzzLight/LoginViewController.m"
+         timestampString = "392710899.803709"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "48"
+         endingLineNumber = "48"
+         landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

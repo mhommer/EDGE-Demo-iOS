@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
 
 @interface DataStore : NSObject {
     
@@ -14,4 +15,7 @@
 
 +(void)storeToken:(NSDictionary*)token;
 +(NSDictionary*)restoreToken;
+
++(void)storeUser:(User*)user;
++(User*)restoreUser;
 @end

@@ -44,6 +44,11 @@
     [api listAllInTable:TableEvents];
 }
 
+-(void)getUserWithId:(NSString*)userid {
+    api.currentCallType = CallTypeListTableUsers;
+    [api selectRowInTable:TableUsers withDictionary:[[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"id='%@'", userid], @"*", nil]];
+}
+
 -(void)addUser:(User*)user {
     NSDictionary *userDict = [self dictFromUser:user];
     [api insertRowInTable:TableUsers fromDictionary:userDict];

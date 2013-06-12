@@ -27,6 +27,9 @@
 		1EF2DC671764AD83001AEDCD /* ModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC661764AD83001AEDCD /* ModelObject.m */; };
 		1EF2DC6A1764AD95001AEDCD /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC681764AD95001AEDCD /* Event.m */; };
 		1EF2DC6F1764ADBC001AEDCD /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC6D1764ADBC001AEDCD /* User.m */; };
+		1EF2DC751767972B001AEDCD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC741767972B001AEDCD /* LoginViewController.m */; };
+		1EF2DC7917683BEB001AEDCD /* RefineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC7817683BEB001AEDCD /* RefineViewController.m */; };
+		1EF2DC7C17684674001AEDCD /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC7B17684674001AEDCD /* EventsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,14 @@
 		1EF2DC691764AD95001AEDCD /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		1EF2DC6D1764ADBC001AEDCD /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = ../User.m; sourceTree = "<group>"; };
 		1EF2DC6E1764ADBC001AEDCD /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../User.h; sourceTree = "<group>"; };
+		1EF2DC731767972B001AEDCD /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		1EF2DC741767972B001AEDCD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		1EF2DC7717683BEB001AEDCD /* RefineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefineViewController.h; sourceTree = "<group>"; };
+		1EF2DC7817683BEB001AEDCD /* RefineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefineViewController.m; sourceTree = "<group>"; };
+		1EF2DC7A17684674001AEDCD /* EventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewController.h; sourceTree = "<group>"; };
+		1EF2DC7B17684674001AEDCD /* EventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewController.m; sourceTree = "<group>"; };
+		1EF2DC7D17684B6C001AEDCD /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		1EF2DC7E17684B6C001AEDCD /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +128,7 @@
 				1EF2DC721764ADF7001AEDCD /* Helpers */,
 				1EDB171E1764976A00A5B08D /* AppDelegate.h */,
 				1EDB171F1764976A00A5B08D /* AppDelegate.m */,
-				1EDB17271764976A00A5B08D /* MainStoryboard.storyboard */,
-				1EDB172A1764976A00A5B08D /* ViewController.h */,
-				1EDB172B1764976A00A5B08D /* ViewController.m */,
+				1EF2DC761767973B001AEDCD /* View Controllers */,
 				1EDB17161764976A00A5B08D /* Supporting Files */,
 			);
 			path = BuzzLight;
@@ -175,6 +184,24 @@
 				1EF2DC5F1764AD63001AEDCD /* Utils.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		1EF2DC761767973B001AEDCD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1EF2DC7D17684B6C001AEDCD /* TPKeyboardAvoidingScrollView.h */,
+				1EF2DC7E17684B6C001AEDCD /* TPKeyboardAvoidingScrollView.m */,
+				1EDB17271764976A00A5B08D /* MainStoryboard.storyboard */,
+				1EDB172A1764976A00A5B08D /* ViewController.h */,
+				1EDB172B1764976A00A5B08D /* ViewController.m */,
+				1EF2DC731767972B001AEDCD /* LoginViewController.h */,
+				1EF2DC741767972B001AEDCD /* LoginViewController.m */,
+				1EF2DC7717683BEB001AEDCD /* RefineViewController.h */,
+				1EF2DC7817683BEB001AEDCD /* RefineViewController.m */,
+				1EF2DC7A17684674001AEDCD /* EventsTableViewController.h */,
+				1EF2DC7B17684674001AEDCD /* EventsTableViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +281,9 @@
 				1EF2DC671764AD83001AEDCD /* ModelObject.m in Sources */,
 				1EF2DC6A1764AD95001AEDCD /* Event.m in Sources */,
 				1EF2DC6F1764ADBC001AEDCD /* User.m in Sources */,
+				1EF2DC751767972B001AEDCD /* LoginViewController.m in Sources */,
+				1EF2DC7917683BEB001AEDCD /* RefineViewController.m in Sources */,
+				1EF2DC7C17684674001AEDCD /* EventsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

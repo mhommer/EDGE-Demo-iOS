@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "DataStore.h"
 #import "Utils.h"
+#import "LoginViewController.h"
 
 @interface ViewController ()
 
@@ -24,6 +25,12 @@
     apiWrapper = [[GoogleApiWrapper alloc] init];
     apiWrapper.delegate = self;
     
+       
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidLayoutSubviews];
+    
     // See if OAuth token is still valid.
     NSDictionary *token = [DataStore restoreToken];
     if (token != nil) {
@@ -32,24 +39,26 @@
             [apiWrapper refreshAccessTokensWithRefreshToken:[token valueForKey:@"refresh_token"]];
         } else {
             // If not, we're happy and start getting stuff!
-            [apiWrapper getAllEvents];
-            [apiWrapper getAllUsers];
-            
-            [api selectRowInTable:TableUsers withDictionary:[[NSDictionary alloc] initWithObjectsAndKeys:@"id='iran'", @"ROWID", nil]];
-            NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                  @"first='Irina'",@"first='iRINA'",
-                                  @"last='Anastasiu'",@"last='aNASTASIU'",
-                                  nil];
-            [api updateRowInTable:TableUsers fromDictionary:dict];
-            
+            [self performSegueWithIdentifier:@"oauthSegue" sender:self];
+            /*
+             These were just tests!
+             [apiWrapper getAllEvents];
+             [apiWrapper getAllUsers];
+             
+             [api selectRowInTable:TableUsers withDictionary:[[NSDictionary alloc] initWithObjectsAndKeys:@"id='iran'", @"ROWID", nil]];
+             NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:
+             @"first='Irina'",@"first='iRINA'",
+             @"last='Anastasiu'",@"last='aNASTASIU'",
+             nil];
+             [api updateRowInTable:TableUsers fromDictionary:dict];
+             */
             
         }
     }else {
         [api authorizeClient];
     }
-    
-}
 
+}
 
 
 -(void)apiWrapperLoadedModelObjects:(NSArray *)modelObjects {
@@ -74,6 +83,7 @@
         // Storing the token in the user defaults is not safe, we should use a keychain wrapper instead
         // but for the prototype it'll do!
         [DataStore storeToken:token];
+        [self performSegueWithIdentifier:@"oauthSegue" sender:self];
     }
 }
 
@@ -94,7 +104,6 @@
         
     }
 }
-
 
 
 - (void)didReceiveMemoryWarning

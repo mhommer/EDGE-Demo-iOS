@@ -30,6 +30,7 @@
 -(void)refreshAccessTokensWithRefreshToken:(NSString*)token;
 -(void)getAllUsers;
 -(void)getAllEvents;
+-(void)getUserWithId:(NSString*)userid;
 -(void)listAllInTable:(TableType)table;
 -(void)selectRowInTable:(TableType)table withDictionary:(NSDictionary*)dict;
 -(void)addUser:(User*)user;
