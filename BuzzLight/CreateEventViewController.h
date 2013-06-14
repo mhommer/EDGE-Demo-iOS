@@ -10,6 +10,7 @@
 #import "GoogleApiWrapper.h"
 #import "Event.h"
 #import "User.h"
+#import "TPKeyboardAvoidingScrollView.h"
 
 @interface CreateEventViewController : UIViewController <GoogleApiWrapperDelegate, UITextFieldDelegate> {
     UIDatePicker *datePicker;
@@ -28,9 +29,11 @@
 @property (retain, nonatomic) IBOutlet UILabel *dayNameLabel;
 @property (retain, nonatomic) IBOutlet UILabel *monthYearLabel;
 @property (retain, nonatomic) IBOutlet UIToolbar *doneBar;
+@property (retain, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 
 - (IBAction)showDatePicker:(id)sender;
 - (IBAction)hidePicker:(id)sender;
+- (IBAction)cancelCreation:(id)sender;
 
 
 @end

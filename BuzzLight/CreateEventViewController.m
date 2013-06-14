@@ -110,6 +110,10 @@
     }
 }
 
+- (IBAction)cancelCreation:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 - (void)changeDateInLabel:(id)sender{
 
@@ -152,6 +156,7 @@
     [doneBar release];
     [apiWrapper release];
     [event release];
+    [_scrollView release];
     [super dealloc];
 }
 
