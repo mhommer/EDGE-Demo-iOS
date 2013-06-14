@@ -62,12 +62,11 @@
 +(NSDictionary*)dictFromEvent:(Event*)event {
     NSDictionary *eventDict = [[NSDictionary alloc] initWithObjectsAndKeys:
                                [Utils stringWithSingleQuotes:event.what], @"what",
-                               [Utils stringWithSingleQuotes:event.where], @"where",
-                               [NSNumber numberWithDouble:event.timestamp], @"when",
+                               [Utils stringWithSingleQuotes:event.where], @"loc",
+                               [NSNumber numberWithDouble:event.timestamp], @"timestamp",
                                [Utils stringWithSingleQuotes:[event.attendees componentsJoinedByString:@"|"]], @"attendees",
                                [Utils stringWithSingleQuotes:event.creator], @"creator",
                                nil];
-    
     return eventDict;
 }
 
@@ -87,7 +86,7 @@
 +(Event*)eventFromDictionary:(NSDictionary*)dict {
     
     Event *event = [[Event alloc] init];
-    [event setWhere:[dict valueForKey:@"where"]];
+    [event setWhere:[dict valueForKey:@"loc"]];
     [event setWhat:[dict valueForKey:@"what"]];
     [event setAttendees:[[dict valueForKey:@"attendees"] componentsSeparatedByString:@"|"]];
     [event setTimestamp:[[dict valueForKey:@"timestamp"] doubleValue]];

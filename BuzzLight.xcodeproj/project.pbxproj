@@ -38,6 +38,7 @@
 		1EF2DC8D176AE236001AEDCD /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC8C176AE236001AEDCD /* TPKeyboardAvoidingScrollView.m */; };
 		1EF2DC90176B2397001AEDCD /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC8F176B2397001AEDCD /* EventDetailViewController.m */; };
 		1EF2DC93176B3742001AEDCD /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC92176B3742001AEDCD /* CreateEventViewController.m */; };
+		1EF675F6176B728A006E2FA9 /* EventConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF675F5176B728A006E2FA9 /* EventConfirmViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,8 @@
 		1EF2DC8F176B2397001AEDCD /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
 		1EF2DC91176B3741001AEDCD /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventViewController.h; sourceTree = "<group>"; };
 		1EF2DC92176B3742001AEDCD /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventViewController.m; sourceTree = "<group>"; };
+		1EF675F4176B728A006E2FA9 /* EventConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventConfirmViewController.h; sourceTree = "<group>"; };
+		1EF675F5176B728A006E2FA9 /* EventConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventConfirmViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +229,8 @@
 				1EF2DC8F176B2397001AEDCD /* EventDetailViewController.m */,
 				1EF2DC91176B3741001AEDCD /* CreateEventViewController.h */,
 				1EF2DC92176B3742001AEDCD /* CreateEventViewController.m */,
+				1EF675F4176B728A006E2FA9 /* EventConfirmViewController.h */,
+				1EF675F5176B728A006E2FA9 /* EventConfirmViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				1EF2DC8D176AE236001AEDCD /* TPKeyboardAvoidingScrollView.m in Sources */,
 				1EF2DC90176B2397001AEDCD /* EventDetailViewController.m in Sources */,
 				1EF2DC93176B3742001AEDCD /* CreateEventViewController.m in Sources */,
+				1EF675F6176B728A006E2FA9 /* EventConfirmViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

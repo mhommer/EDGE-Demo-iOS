@@ -30,7 +30,6 @@
         apiWrapper.delegate = self;
         self.user = [DataStore restoreUser];
         self.event = [[Event alloc] init];
-        event.creator = [Utils stringRemovingSingleQuotes:user.netlightId];
         event.attendees = [[NSArray alloc] init];
     }
     return self;
@@ -50,7 +49,18 @@
 #pragma mark - API
 
 -(void)apiWrapperLoadedModelObjects:(NSArray *)modelObjects {
-    
+    int newRowId = -1;
+    if ([modelObjects count] == 1) {
+        NSObject *obj = [modelObjects objectAtIndex:0];
+        if ([obj isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *response = (NSDictionary*)obj;
+            newRowId = [[response  valueForKey:@"rowid"] integerValue];
+        }
+    }
+
+    if (newRowId > 0) {
+        [self performSegueWithIdentifier:@"createeventSegue" sender:self];
+    }
 }
 
 
@@ -59,6 +69,7 @@
 
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     if ([identifier isEqualToString:@"createeventSegue"]) {
+        event.creator = [Utils stringRemovingSingleQuotes:user.netlightId];
         [apiWrapper addEvent:event];
     }
     if ([sender isEqual:self]) {
@@ -77,6 +88,7 @@
 #pragma mark - Datepicker
 
 - (IBAction)showDatePicker:(id)sender{
+    [self textFieldDidEndEditing:whereTextField];
     datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 289, self.view.frame.size.width, self.view.frame.size.height)];
     datePicker.datePickerMode = UIDatePickerModeDateAndTime;
 	datePicker.hidden = NO;

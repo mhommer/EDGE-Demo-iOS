@@ -69,8 +69,11 @@
 +(NSObject*)restoreObjectWithPath:(NSString*)path {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *objDict = [defaults objectForKey:path];
-    NSObject *obj = [Utils userFromDictionary:objDict];
-    return obj;
+    if (objDict != nil) {
+        NSObject *obj = [Utils userFromDictionary:objDict];
+        return obj;
+    }
+    return nil;
 }
 
 @end

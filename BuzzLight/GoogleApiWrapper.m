@@ -58,9 +58,11 @@
 
 
 -(void)addEvent:(Event*)event {
+    NSArray *att = [[NSArray alloc]initWithObjects:event.creator, nil];
+    event.attendees = att;
     NSDictionary *eventDict = [Utils dictFromEvent:event];
     [api insertRowInTable:TableEvents fromDictionary:eventDict];
-    [eventDict release];
+    [att release];
 }
 
 -(void)updateUserWithDict:(NSDictionary*)dict {

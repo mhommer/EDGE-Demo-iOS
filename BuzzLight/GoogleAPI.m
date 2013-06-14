@@ -1,4 +1,4 @@
-//
+    //
 //  GoogleAPI.m
 //  GFusionTableAPI
 //
@@ -180,7 +180,7 @@
     }
     
     NSString *SQLQuery = [NSString stringWithFormat:@"INSERT INTO %@ (%@) VALUES (%@)",
-                          tableId, [[dict allKeys] componentsJoinedByString:@", "], [[dict allValues] componentsJoinedByString:@", "]];
+                          tableId, [[dict allKeys] componentsJoinedByString:@","], [[dict allValues] componentsJoinedByString:@","]];
     [self doHttpCallWithSQLQuery:SQLQuery andHTTPMethod:kMethodPOST];
     [dict release];
 }
