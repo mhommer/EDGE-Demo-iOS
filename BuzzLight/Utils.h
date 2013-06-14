@@ -19,5 +19,13 @@
 +(void)addToCalendarWithEvent:(Event*)e;
 +(void)removeFromCalendarWithEvent:(Event*)e;
 +(NSString*)stringWithSingleQuotes:(NSString*)str;
++(NSString*)stringRemovingSingleQuotes:(NSString*)str;
++(NSDictionary*)dictFromEvent:(Event*)event;
++(NSDictionary*)dictFromUser:(User*)user;
++(Event*)eventFromDictionary:(NSDictionary*)dict;
++(User*)userFromDictionary:(NSDictionary*)dict;
++(NSArray*)userArrayFromDictionaryArray:(NSArray*)dictArray;
++(NSArray*)eventArrayFromDictionaryArray:(NSArray*)dictArray;
+
 
 @end

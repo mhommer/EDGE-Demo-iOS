@@ -30,6 +30,14 @@
 		1EF2DC751767972B001AEDCD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC741767972B001AEDCD /* LoginViewController.m */; };
 		1EF2DC7917683BEB001AEDCD /* RefineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC7817683BEB001AEDCD /* RefineViewController.m */; };
 		1EF2DC7C17684674001AEDCD /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC7B17684674001AEDCD /* EventsTableViewController.m */; };
+		1EF2DC8017690EB5001AEDCD /* hiresicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF2DC7F17690EB5001AEDCD /* hiresicon.png */; };
+		1EF2DC821769166B001AEDCD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF2DC811769166B001AEDCD /* icon.png */; };
+		1EF2DC8417699EA7001AEDCD /* othericon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF2DC8317699EA7001AEDCD /* othericon.png */; };
+		1EF2DC89176AE01D001AEDCD /* horsebee.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF2DC87176AE01C001AEDCD /* horsebee.png */; };
+		1EF2DC8A176AE01D001AEDCD /* horsebee@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF2DC88176AE01D001AEDCD /* horsebee@2x.png */; };
+		1EF2DC8D176AE236001AEDCD /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC8C176AE236001AEDCD /* TPKeyboardAvoidingScrollView.m */; };
+		1EF2DC90176B2397001AEDCD /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC8F176B2397001AEDCD /* EventDetailViewController.m */; };
+		1EF2DC93176B3742001AEDCD /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2DC92176B3742001AEDCD /* CreateEventViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,8 +81,17 @@
 		1EF2DC7817683BEB001AEDCD /* RefineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefineViewController.m; sourceTree = "<group>"; };
 		1EF2DC7A17684674001AEDCD /* EventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewController.h; sourceTree = "<group>"; };
 		1EF2DC7B17684674001AEDCD /* EventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewController.m; sourceTree = "<group>"; };
-		1EF2DC7D17684B6C001AEDCD /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
-		1EF2DC7E17684B6C001AEDCD /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		1EF2DC7F17690EB5001AEDCD /* hiresicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiresicon.png; sourceTree = "<group>"; };
+		1EF2DC811769166B001AEDCD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		1EF2DC8317699EA7001AEDCD /* othericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = othericon.png; sourceTree = "<group>"; };
+		1EF2DC87176AE01C001AEDCD /* horsebee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horsebee.png; sourceTree = "<group>"; };
+		1EF2DC88176AE01D001AEDCD /* horsebee@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "horsebee@2x.png"; sourceTree = "<group>"; };
+		1EF2DC8B176AE236001AEDCD /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		1EF2DC8C176AE236001AEDCD /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		1EF2DC8E176B2397001AEDCD /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
+		1EF2DC8F176B2397001AEDCD /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
+		1EF2DC91176B3741001AEDCD /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventViewController.h; sourceTree = "<group>"; };
+		1EF2DC92176B3742001AEDCD /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +112,9 @@
 		1EDB17031764976A00A5B08D = {
 			isa = PBXGroup;
 			children = (
+				1EF2DC8317699EA7001AEDCD /* othericon.png */,
+				1EF2DC811769166B001AEDCD /* icon.png */,
+				1EF2DC7F17690EB5001AEDCD /* hiresicon.png */,
 				1EDB17151764976A00A5B08D /* BuzzLight */,
 				1EDB170E1764976A00A5B08D /* Frameworks */,
 				1EDB170D1764976A00A5B08D /* Products */,
@@ -137,6 +157,8 @@
 		1EDB17161764976A00A5B08D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1EF2DC87176AE01C001AEDCD /* horsebee.png */,
+				1EF2DC88176AE01D001AEDCD /* horsebee@2x.png */,
 				1EDB17171764976A00A5B08D /* BuzzLight-Info.plist */,
 				1EDB17181764976A00A5B08D /* InfoPlist.strings */,
 				1EDB171B1764976A00A5B08D /* main.m */,
@@ -176,6 +198,8 @@
 		1EF2DC721764ADF7001AEDCD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1EF2DC8B176AE236001AEDCD /* TPKeyboardAvoidingScrollView.h */,
+				1EF2DC8C176AE236001AEDCD /* TPKeyboardAvoidingScrollView.m */,
 				1EF2DC561764AD63001AEDCD /* DataStore.h */,
 				1EF2DC571764AD63001AEDCD /* DataStore.m */,
 				1EF2DC581764AD63001AEDCD /* DownloadURLOperation.h */,
@@ -189,8 +213,6 @@
 		1EF2DC761767973B001AEDCD /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1EF2DC7D17684B6C001AEDCD /* TPKeyboardAvoidingScrollView.h */,
-				1EF2DC7E17684B6C001AEDCD /* TPKeyboardAvoidingScrollView.m */,
 				1EDB17271764976A00A5B08D /* MainStoryboard.storyboard */,
 				1EDB172A1764976A00A5B08D /* ViewController.h */,
 				1EDB172B1764976A00A5B08D /* ViewController.m */,
@@ -200,6 +222,10 @@
 				1EF2DC7817683BEB001AEDCD /* RefineViewController.m */,
 				1EF2DC7A17684674001AEDCD /* EventsTableViewController.h */,
 				1EF2DC7B17684674001AEDCD /* EventsTableViewController.m */,
+				1EF2DC8E176B2397001AEDCD /* EventDetailViewController.h */,
+				1EF2DC8F176B2397001AEDCD /* EventDetailViewController.m */,
+				1EF2DC91176B3741001AEDCD /* CreateEventViewController.h */,
+				1EF2DC92176B3742001AEDCD /* CreateEventViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -260,6 +286,11 @@
 				1EDB17241764976A00A5B08D /* Default@2x.png in Resources */,
 				1EDB17261764976A00A5B08D /* Default-568h@2x.png in Resources */,
 				1EDB17291764976A00A5B08D /* MainStoryboard.storyboard in Resources */,
+				1EF2DC8017690EB5001AEDCD /* hiresicon.png in Resources */,
+				1EF2DC821769166B001AEDCD /* icon.png in Resources */,
+				1EF2DC8417699EA7001AEDCD /* othericon.png in Resources */,
+				1EF2DC89176AE01D001AEDCD /* horsebee.png in Resources */,
+				1EF2DC8A176AE01D001AEDCD /* horsebee@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +315,9 @@
 				1EF2DC751767972B001AEDCD /* LoginViewController.m in Sources */,
 				1EF2DC7917683BEB001AEDCD /* RefineViewController.m in Sources */,
 				1EF2DC7C17684674001AEDCD /* EventsTableViewController.m in Sources */,
+				1EF2DC8D176AE236001AEDCD /* TPKeyboardAvoidingScrollView.m in Sources */,
+				1EF2DC90176B2397001AEDCD /* EventDetailViewController.m in Sources */,
+				1EF2DC93176B3742001AEDCD /* CreateEventViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

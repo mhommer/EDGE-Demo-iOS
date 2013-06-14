@@ -35,4 +35,6 @@
 -(void)selectRowInTable:(TableType)table withDictionary:(NSDictionary*)dict;
 -(void)addUser:(User*)user;
 -(void)addEvent:(Event*)event;
+-(void)updateUserWithDict:(NSDictionary*)dict;
+-(void)updateEventWithDict:(NSDictionary*)dict;
 @end

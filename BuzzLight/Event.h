@@ -13,12 +13,14 @@
     NSString *where;
     NSTimeInterval timestamp;
     NSArray *attendees;
+    NSString *creator;
 }
 
 @property (nonatomic, retain) NSString *what;
 @property (nonatomic, retain) NSString *where;
 @property (nonatomic) NSTimeInterval timestamp;
 @property (nonatomic, retain) NSArray *attendees;
+@property (nonatomic, retain) NSString *creator;
 
 
 

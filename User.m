@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import "Utils.h"
 
 @implementation User
 

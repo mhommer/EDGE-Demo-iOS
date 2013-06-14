@@ -36,7 +36,7 @@
     if (token != nil) {
         if ([Utils hasTokenExpired:token]) {
             // If yes, refresh it.
-            [apiWrapper refreshAccessTokensWithRefreshToken:[token valueForKey:@"refresh_token"]];
+            [api refreshAccessTokensWithRefreshToken:[token valueForKey:@"refresh_token"]];
         } else {
             // If not, we're happy and start getting stuff!
             [self performSegueWithIdentifier:@"oauthSegue" sender:self];

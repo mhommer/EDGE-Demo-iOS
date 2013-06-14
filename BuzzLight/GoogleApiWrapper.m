@@ -28,6 +28,7 @@
 
 
 -(void)refreshAccessTokensWithRefreshToken:(NSString*)token {
+    api.currentCallType = CallTypeTokenRefresh;
     [api refreshAccessTokensWithRefreshToken:token];
 }
 
@@ -50,16 +51,26 @@
 }
 
 -(void)addUser:(User*)user {
-    NSDictionary *userDict = [self dictFromUser:user];
+    NSDictionary *userDict = [Utils dictFromUser:user];
     [api insertRowInTable:TableUsers fromDictionary:userDict];
     [userDict release];
 }
 
 
 -(void)addEvent:(Event*)event {
-    NSDictionary *eventDict = [self dictFromEvent:event];
+    NSDictionary *eventDict = [Utils dictFromEvent:event];
     [api insertRowInTable:TableEvents fromDictionary:eventDict];
     [eventDict release];
+}
+
+-(void)updateUserWithDict:(NSDictionary*)dict {
+    [api updateRowInTable:TableUsers fromDictionary:dict];
+}
+
+
+-(void)updateEventWithDict:(NSDictionary*)dict {
+    [api updateRowInTable:TableEvents fromDictionary:dict];
+    
 }
 
 
@@ -68,16 +79,17 @@
     if (operation.callType == CallTypeGetTableUsersRow || operation.callType == CallTypeListTableUsers) {
         
         NSArray *dictArray = [[self convertData:data] retain];
-        [delegate apiWrapperLoadedModelObjects:[self userArrayFromDictionaryArray:dictArray]];
+        [delegate apiWrapperLoadedModelObjects:[Utils userArrayFromDictionaryArray:dictArray]];
         [dictArray release];
         
     } else if (operation.callType == CallTypeGetTableEventsRow || operation.callType == CallTypeListTableEvents) {
         NSArray *dictArray = [[self convertData:data] retain];
-        [delegate apiWrapperLoadedModelObjects:[self eventArrayFromDictionaryArray:dictArray]];
+        [delegate apiWrapperLoadedModelObjects:[Utils eventArrayFromDictionaryArray:dictArray]];
         [dictArray release];
     } else {
         NSString *dataStr2 = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"***** %@",dataStr2);
+        [delegate apiWrapperLoadedModelObjects: [[self convertData:data] autorelease]];
     }
 }
 
@@ -101,85 +113,6 @@
     }
     return dictArray;
 }
-
-
--(NSDictionary*)dictFromEvent:(Event*)event {
-    NSDictionary *eventDict = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                [Utils stringWithSingleQuotes:event.what], @"what",
-                                [Utils stringWithSingleQuotes:event.where], @"where",
-                                [NSNumber numberWithDouble:event.timestamp], @"when",
-                                [Utils stringWithSingleQuotes:[event.attendees componentsJoinedByString:@"|"]], @"attendees",
-                                nil];
-    
-    return eventDict;
-}
-
--(NSDictionary*)dictFromUser:(User*)user {
-    NSDictionary *userDict = [[NSDictionary alloc] initWithObjectsAndKeys:
-                               [Utils stringWithSingleQuotes:user.netlightId], @"id",
-                               [Utils stringWithSingleQuotes:user.first], @"first",
-                               [Utils stringWithSingleQuotes:user.last], @"last",
-                               [Utils stringWithSingleQuotes:user.email], @"email",
-                               [Utils stringWithSingleQuotes:user.phone], @"phone",
-                               nil];
-    
-    return userDict;
-}
-
-
--(Event*)eventFromDictionary:(NSDictionary*)dict {
-    
-    Event *event = [[Event alloc] init];
-    [event setWhere:[dict valueForKey:@"where"]];
-    [event setWhat:[dict valueForKey:@"what"]];
-    [event setAttendees:[[dict valueForKey:@"attendees"] componentsSeparatedByString:@"|"]];
-    [event setTimestamp:[[dict valueForKey:@"timestamp"] doubleValue]];
-    return event;
-}
-
-
-
--(User*)userFromDictionary:(NSDictionary*)dict {
-    
-    User *user = [[User alloc] init];
-    [user setNetlightId:[dict valueForKey:@"id"]];
-    [user setFirst:[dict valueForKey:@"first"]];
-    [user setLast:[dict valueForKey:@"last"]];
-    [user setEmail:[dict valueForKey:@"email"]];
-    [user setPhone:[dict valueForKey:@"phone"]];
-    return user;
-}
-
--(NSArray*)userArrayFromDictionaryArray:(NSArray*)dictArray {
-    NSMutableArray *users = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *d in dictArray) {
-        User *u = [self userFromDictionary:d];
-        [users addObject:u];
-        [u release];
-    }
-    NSArray *theUsers = [NSArray arrayWithArray:users];
-    [users release];
-    return theUsers;
-}
-
-
-
--(NSArray*)eventArrayFromDictionaryArray:(NSArray*)dictArray {
-    NSMutableArray *events = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *d in dictArray) {
-        Event *e = [self eventFromDictionary:d];
-        [events addObject:e];
-        [e release];
-    }
-    
-    NSArray *theEvents = [NSArray arrayWithArray:events];
-    [events release];
-    return theEvents;
-}
-
-
 
 
 

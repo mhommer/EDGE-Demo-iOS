@@ -21,7 +21,8 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        // Custom initialization
+        apiWrapper = [[GoogleApiWrapper alloc] init];
+        apiWrapper.delegate = self;
     }
     return self;
 }
@@ -39,28 +40,66 @@
 }
 
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"refineSegue"]) {
+-(void)apiWrapperLoadedModelObjects:(NSArray *)modelObjects {
+    int affectedRowsNo = 0;
+    if ([modelObjects count] == 1) {
+        NSObject *obj = [modelObjects objectAtIndex:0];
+        if ([obj isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *response = (NSDictionary*)obj;
+                affectedRowsNo = [[response  valueForKey:@"affected_rows"] integerValue];
+            }
+    }
+    
+    if (affectedRowsNo > 0) {
+        [DataStore storeUser:self.user];
+        [self performSegueWithIdentifier:@"refineSegue" sender:self];
+    } else {
+        [self promptNoDataError];
+    }
+}
+
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender { 
+    
+    if ([sender isEqual:self]) {
+        
+        return YES;
+    } else {
         if (![emailTextField.text isEqualToString:@""] && ![phoneTextField.text isEqualToString:@""]) {
-            user.email = emailTextField.text;
-            user.phone = [[phoneTextField.text stringByReplacingOccurrencesOfString:@"+" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
-            [DataStore storeUser:user];
+            NSDictionary *changesDict = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                          [NSString stringWithFormat:@"id='%@'", user.netlightId],[NSString stringWithFormat:@"email='%@'", emailTextField.text],
+                                          [NSString stringWithFormat:@"first='%@'", user.first],[NSString stringWithFormat:@"phone='%@'", phoneTextField.text],
+                                          nil];
+            [apiWrapper updateUserWithDict:changesDict];
         } else {
             [self promptNoDataError];
         }
-        
     }
+        
+    return NO;
 }
+
 
 -(void)promptNoDataError {
     
 }
 
 
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    self.user.email = emailTextField.text;
+    self.user.phone = [[phoneTextField.text stringByReplacingOccurrencesOfString:@"+" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc {
+    [super dealloc];
+    [apiWrapper release];
+    [user release];
 }
 
 @end

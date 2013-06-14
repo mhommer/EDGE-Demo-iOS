@@ -7,10 +7,24 @@
 //
 
 #import "Event.h"
+#import "Utils.h"
 
 @implementation Event 
 
-@synthesize what, where, timestamp, attendees;
+@synthesize what, where, timestamp, attendees, creator;
+
+
+-(void)setWhat:(NSString *)_what {
+    what = [Utils stringRemovingSingleQuotes:_what];
+}
+
+-(void)setWhere:(NSString *)_where {
+    where = [Utils stringRemovingSingleQuotes:_where];
+}
+
+-(void)setCreator:(NSString *)_creator {
+    creator = [Utils stringRemovingSingleQuotes:_creator];
+}
 
 
 -(void)dealloc {
@@ -18,5 +32,6 @@
     [what release];
     [where release];
     [attendees release];
+    [creator release];
 }
 @end

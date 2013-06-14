@@ -7,12 +7,12 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "BuzzLight/LoginViewController.m"
-         timestampString = "392710897.853102"
+         filePath = "BuzzLight/CreateEventViewController.m"
+         timestampString = "392906123.750223"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
+         startingLineNumber = "53"
+         endingLineNumber = "53"
          landmarkName = "-apiWrapperLoadedModelObjects:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -20,13 +20,13 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "BuzzLight/LoginViewController.m"
-         timestampString = "392710899.803709"
+         filePath = "BuzzLight/CreateEventViewController.m"
+         timestampString = "392906123.750223"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "48"
-         endingLineNumber = "48"
-         landmarkName = "-prepareForSegue:sender:"
+         startingLineNumber = "61"
+         endingLineNumber = "61"
+         landmarkName = "-shouldPerformSegueWithIdentifier:sender:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

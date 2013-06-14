@@ -93,7 +93,7 @@
     
     NSString *clientId = kClientId;
     NSString *clientSecret = kSecret;
-    NSString *grantType = @"authorization_code";
+    NSString *grantType = @"refresh_token";
     //NSString *state;
     
     urlStr = [NSString stringWithFormat:@"%@token",urlStr];
@@ -159,6 +159,7 @@
     NSString *SQLQuery = [NSString stringWithFormat:@"SELECT %@ FROM %@ WHERE %@",
                           [[dict allKeys] componentsJoinedByString:@", "], tableId, [[dict allValues] componentsJoinedByString:@" and "]];
     [self doHttpCallWithSQLQuery:SQLQuery andHTTPMethod:kMethodGET andNextOperation:nextOperation];
+    [dict release];
 }
 
 
@@ -181,6 +182,7 @@
     NSString *SQLQuery = [NSString stringWithFormat:@"INSERT INTO %@ (%@) VALUES (%@)",
                           tableId, [[dict allKeys] componentsJoinedByString:@", "], [[dict allValues] componentsJoinedByString:@", "]];
     [self doHttpCallWithSQLQuery:SQLQuery andHTTPMethod:kMethodPOST];
+    [dict release];
 }
 
 
@@ -204,6 +206,7 @@
     NSString *SQLQuery = [NSString stringWithFormat:@"UPDATE %@ SET %@ WHERE %@",
                           tableId, [[dict allKeys] componentsJoinedByString:@", "], [[dict allValues] componentsJoinedByString:@" AND "]];
     [self doHttpCallWithSQLQuery:SQLQuery andHTTPMethod:kMethodPOST];
+    [dict release];
 }
 
 
@@ -242,7 +245,7 @@
     [op addFinishObserver:self];
     
     NSRange whereRange = [urlString rangeOfString:@"WHERE"];
-    if (whereRange.location != NSNotFound) {
+    if (whereRange.location != NSNotFound && (self.currentCallType==CallTypeUpdateTableEventsRow || self.currentCallType==CallTypeUpdateTableUsersRow)) {
         NSString *whereQuery = [[urlString substringFromIndex:(whereRange.location + whereRange.length)] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
         switch (self.currentCallType) {
@@ -302,9 +305,6 @@
         } else {
            [delegate api:self loadedData:data withOperation:op]; 
         }
-        
-        
-        
         
     }
 }

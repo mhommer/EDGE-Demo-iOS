@@ -8,12 +8,17 @@
 
 #import "LoginViewController.h"
 #import "RefineViewController.h"
+#import "DataStore.h"
 
 @interface LoginViewController ()
+
+@property (nonatomic, retain) User *user;
 
 @end
 
 @implementation LoginViewController
+
+@synthesize user;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -24,30 +29,40 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+
+    self.user = [DataStore restoreUser];
+    if (user != nil) {
+        [self performSegueWithIdentifier:@"loggedinSegue" sender:self];
+    }
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
 }
 
 -(void)apiWrapperLoadedModelObjects:(NSArray *)modelObjects {
-    
+    [modelObjects retain];
     if ([modelObjects count] == 1) {
         NSObject *obj = [modelObjects objectAtIndex:0];
         if ([obj isKindOfClass:[User class]]) {
-            user = (User*)obj;
+            self.user = (User*)obj;
             [self performSegueWithIdentifier:@"loginSegue" sender:self];
         } else {
             [self promptForLoginError];
         }
     }
+    [modelObjects release];
     
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"loginSegue"]) {
         RefineViewController *refineVC = (RefineViewController*)[segue destinationViewController];
-        [refineVC setUser:user];
+        [refineVC setUser:self.user];
     }
 }
 
@@ -62,12 +77,16 @@
             return YES;
         }
         
+    } else {
+        return YES;
     }
+    
     return NO;
 }
 
 -(void)promptForLoginError {
     
+    useridTextField.text = @"ERROR!";
 }
 
 - (void)didReceiveMemoryWarning

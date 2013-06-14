@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "GoogleApiWrapper.h"
 
-@interface RefineViewController : UIViewController {
+@interface RefineViewController : UIViewController <GoogleApiWrapperDelegate, UITextFieldDelegate> {
+    
+    GoogleApiWrapper *apiWrapper;
     User *user;
     
     IBOutlet UILabel *firstLabel;
