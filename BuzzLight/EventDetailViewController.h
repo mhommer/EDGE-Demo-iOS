@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GoogleApiWrapper.h"
 #import "Event.h"
+#import "User.h"
 
-@interface EventDetailViewController : UIViewController {
+@interface EventDetailViewController : UIViewController <GoogleApiWrapperDelegate> {
+
+    GoogleApiWrapper *apiWrapper;
+    
     Event *event;
+    User *user;
     
     IBOutlet UILabel *whatLabel;
     IBOutlet UILabel *whereLabel;
@@ -19,8 +25,12 @@
     IBOutlet UILabel *monthYearLabel;
     IBOutlet UILabel *timeLabel;
     IBOutlet UILabel *dayNameLabel;
+    IBOutlet UILabel *joinedLabel;
+    IBOutlet UIButton *joinButton;
 }
 
 @property (nonatomic, retain) Event *event;
+@property (nonatomic, retain) NSArray *users;
+@property (nonatomic, retain) User *user;
 
 @end

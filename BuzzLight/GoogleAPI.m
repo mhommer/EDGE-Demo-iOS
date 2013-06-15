@@ -221,6 +221,7 @@
     NSString *encodedUrl = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url = [NSURL URLWithString:encodedUrl];
     
+    NSLog(@"url: %@", [url description]);
     [self loadDataFromUrl:url withMethod:method andBody:@""];
     
 }
@@ -231,6 +232,7 @@
     NSString *encodedUrl = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url = [NSURL URLWithString:encodedUrl];
     
+        NSLog(@"url: %@", [url description]);
     [self loadDataFromUrl:url withMethod:method andBody:@"" andNextOperation:nextOperation];
     
 }

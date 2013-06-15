@@ -31,6 +31,8 @@
         self.user = [DataStore restoreUser];
         self.event = [[Event alloc] init];
         event.attendees = [[NSArray alloc] init];
+        event.what = @"";
+        event.where = @"";
     }
     return self;
 }
@@ -68,6 +70,17 @@
 
 
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if([[whatTextFIeld text] isEqualToString:@""] || [[whereTextField text] isEqualToString:@""]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Some more info please"
+                                                        message:@"Please fill out all fields before continuing."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+        return NO;
+    }
+    
     if ([identifier isEqualToString:@"createeventSegue"]) {
         event.creator = [Utils stringRemovingSingleQuotes:user.netlightId];
         [apiWrapper addEvent:event];
@@ -89,7 +102,7 @@
 
 - (IBAction)showDatePicker:(id)sender{
     [self textFieldDidEndEditing:whereTextField];
-    datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 289, self.view.frame.size.width, self.view.frame.size.height)];
+    datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, /*289*/240, self.view.frame.size.width, self.view.frame.size.height)];
     datePicker.datePickerMode = UIDatePickerModeDateAndTime;
 	datePicker.hidden = NO;
 	datePicker.date = [NSDate date];

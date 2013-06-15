@@ -14,6 +14,7 @@
     GoogleApiWrapper *apiWrapper;
     
     User *user;
+    NSArray *users;
     
     NSArray *events;
     NSMutableArray *allEvents;

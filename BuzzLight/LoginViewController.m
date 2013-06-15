@@ -75,13 +75,12 @@
         [apiWrapper getUserWithId:useridTextField.text];
         if (user != nil) {
             return YES;
-        }
+            }
         
     } else {
         return YES;
     }
-    
-    return NO;
+        return NO;
 }
 
 -(void)promptForLoginError {

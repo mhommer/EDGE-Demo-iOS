@@ -20,11 +20,13 @@
 
 @property (nonatomic, retain) User *user;
 
+@property (nonatomic, retain) NSArray *users;
+
 @end
 
 @implementation EventsTableViewController
 
-@synthesize events, allEvents, myEvents, joinedEvents, user;
+@synthesize events, allEvents, myEvents, joinedEvents, user, users;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -48,6 +50,7 @@
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
     [apiWrapper getAllEvents];
+    [apiWrapper getAllUsers];
 }
 
 -(void)apiWrapperLoadedModelObjects:(NSArray *)modelObjects {
@@ -58,6 +61,8 @@
             self.events = allEvents;
             [self sortEvents:allEvents];
             [eventsTableView reloadData];
+        } else if ([[modelObjects objectAtIndex:0] isKindOfClass:[User class]]) {
+            self.users = [NSMutableArray arrayWithArray:modelObjects];
         }
     }
     [modelObjects release];
@@ -138,6 +143,9 @@
         NSIndexPath *indexPath = [eventsTableView indexPathForCell:cell];
         
         [detailVC setEvent:[events objectAtIndex:indexPath.row]];
+        [detailVC setUser:user];
+        [detailVC setUsers:[self users]];
+
     }
 }
 
